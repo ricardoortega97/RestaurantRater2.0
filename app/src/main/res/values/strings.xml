@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">RestaurantRater2.0</string>
+    <string name="app_name">RestaurantRater</string>
+    <string name="blank" />
+    <string name="name">Name: </string>
+    <string name="state">State </string>
+    <string name="street_address">Street Address:</string>
+    <string name="zipcode">Zipcode</string>
+    <string name="street_address_hint">Street Address</string>
+    <string name="save">Save</string>
+    <string name="rate">Rate</string>
+    <string name="hint_pancakes">hint: pancakes</string>
+    <string name="dish">Dish:</string>
+    <string name="dish_type">Dish Type:</string>
+    <string name="drink">Drink</string>
+    <string name="dessert">Dessert</string>
+    <string name="entree">Entree</string>
+    <string name="cancel">Cancel</string>
 </resources>
