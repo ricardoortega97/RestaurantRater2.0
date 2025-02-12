@@ -30,7 +30,6 @@ public class RestaurantDataSource {
         try {
             ContentValues initialValues = new ContentValues();
 
-            initialValues.put("restaurant_id", r.getRestaurant_id());
             initialValues.put("name", r.getName());
             initialValues.put("streetAddress", r.getStreetAddress());
             initialValues.put("city", r.getCity());
@@ -50,7 +49,6 @@ public class RestaurantDataSource {
             long rowId = (long) r.getRestaurant_id();
             ContentValues updateValues = new ContentValues();
 
-            updateValues.put("restaurant_id", r.getRestaurant_id());
             updateValues.put("name", r.getName());
             updateValues.put("streetAddress", r.getStreetAddress());
             updateValues.put("city", r.getCity());
@@ -64,7 +62,7 @@ public class RestaurantDataSource {
         return didSucceed;
     }
     public int getLastRestaurantId() {
-        int lastId = -1;
+        int lastId;
         try {
             String query = "Select MAX(restaurant_id) from restaurant";
             Cursor cursor = database.rawQuery(query, null);
@@ -84,7 +82,6 @@ public class RestaurantDataSource {
         try {
             ContentValues initialValues = new ContentValues();
 
-            initialValues.put("dish_id", d.getDish_id());
             initialValues.put("restaurant_id", d.getRestaurant_id());
             initialValues.put("name", d.getName());
             initialValues.put("type", d.getType());
@@ -103,7 +100,6 @@ public class RestaurantDataSource {
             long rowId = (long) d.getDish_id();
             ContentValues updateValues = new ContentValues();
 
-            updateValues.put("dish_id", d.getDish_id());
             updateValues.put("restaurant_id", d.getRestaurant_id());
             updateValues.put("name", d.getName());
             updateValues.put("type", d.getType());
@@ -116,7 +112,7 @@ public class RestaurantDataSource {
         return didSucceed;
     }
     public int getLastDishId() {
-        int lastId = -1;
+        int lastId;
         try {
             String query = "Select MAX(dish_id) from dish";
             Cursor cursor = database.rawQuery(query, null);

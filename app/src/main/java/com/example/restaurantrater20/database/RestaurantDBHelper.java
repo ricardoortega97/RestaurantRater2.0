@@ -3,6 +3,7 @@ package com.example.restaurantrater20.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class RestaurantDBHelper extends SQLiteOpenHelper {
 
@@ -30,14 +31,21 @@ public class RestaurantDBHelper extends SQLiteOpenHelper {
             "FOREIGN KEY (restaurant_id) REFERENCES restaurant(restaurant_id))";
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(CREATE_TABLE_RESTAURANT);
-        sqLiteDatabase.execSQL(CREATE_TABLE_DISH);
-        sqLiteDatabase.execSQL("PRAGMA foreign_keys=ON;");
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(CREATE_TABLE_RESTAURANT);
+        db.execSQL(CREATE_TABLE_DISH);
+        db.execSQL("PRAGMA foreign_keys=ON;");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        Log.w(RestaurantDBHelper.class.getName(),
+                "Upgrading database from version " + i + " to " + i1 +
+                        ", which will destroy all old data");
+
+        db.execSQL("DROP TABLE IF EXISTS dish");
+        db.execSQL("DROP TABLE IF EXISTS restaurant");
+        onCreate(db);
 
     }
 }

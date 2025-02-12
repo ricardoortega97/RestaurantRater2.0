@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 // Do noting, error will be displayed in the log
             } finally {
                 ds.close();
+                Log.println(Log.INFO, "Restaurant", "Restaurant ID: " + currentRestaurant.getRestaurant_id());
             }
 
             Intent intent = new Intent(MainActivity.this, RateDishActivity.class);
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     ds.updateRestaurant(currentRestaurant);
                 }
             } catch (Exception e) {
-                // Do noting, error will be displayed in the log
+                e.printStackTrace();
             } finally {
                 ds.close();
             }
