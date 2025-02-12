@@ -11,7 +11,7 @@
         android:id="@+id/textDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="96dp"
         android:text="@string/dish"
         android:textSize="20sp"
@@ -22,7 +22,7 @@
         android:id="@+id/editTextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="16dp"
         android:autofillHints=""
         android:ems="10"
@@ -37,49 +37,21 @@
         android:id="@+id/textType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="32dp"
         android:text="@string/dish_type"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
-    <RadioGroup
-        android:id="@+id/rgDish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textType">
-
-        <RadioButton
-            android:id="@+id/rbEntree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/entree" />
-
-        <RadioButton
-            android:id="@+id/rbDessert"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dessert" />
-
-        <RadioButton
-            android:id="@+id/rbdrink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/drink" />
-    </RadioGroup>
-
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgDish" />
+        app:layout_constraintTop_toBottomOf="@+id/editDishType" />
 
     <Button
         android:id="@+id/btnRate"
@@ -100,4 +72,19 @@
         android:text="@string/cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <EditText
+        android:id="@+id/editDishType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/hint_breakfast"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textType"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
